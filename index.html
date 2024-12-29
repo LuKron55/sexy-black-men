@@ -21,18 +21,25 @@
             background-color: var(--primary-bg);
             color: var(--text-light);
             line-height: 1.6;
+            transition: background-color 0.3s ease-in-out;
         }
 
         header {
             background-color: var(--secondary-bg);
             padding: 20px 0;
             text-align: centre;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
         }
 
         header h1 {
             margin: 0;
             font-size: 2.5rem;
             colour: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
 
         nav {
@@ -40,6 +47,7 @@
             display: flex;
             justify-content: centre;
             gap: 20px;
+            font-size: 1.1rem;
         }
 
         nav a {
@@ -55,11 +63,35 @@
         section {
             padding: 40px 20px;
             text-align: centre;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        section#about {
+            background: url('path/to/your/image.jpg') no-repeat center center/cover;
+            color: var(--text-light);
+            padding: 80px 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
         }
 
         section h2 {
             font-size: 2rem;
             margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        section#gallery {
+            background-color: var(--secondary-bg);
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        section#contact {
+            background-color: var(--secondary-bg);
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
         }
 
         footer {
@@ -68,11 +100,24 @@
             padding: 10px 0;
             font-size: 0.9rem;
             colour: var(--text-muted);
+            border-top: 1px solid var(--text-muted);
         }
 
         footer a {
             colour: var(--accent);
             text-decoration: none;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        a {
+            transition: color 0.3s ease-in-out;
+        }
+
+        a:hover {
+            color: var(--accent);
         }
     </style>
 </head>
