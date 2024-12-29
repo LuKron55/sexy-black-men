@@ -8,9 +8,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-bg: #121212;
-            --secondary-bg: #1c1c1c;
-            --accent: #d4af37;
+            --primary-bg: #000000;
+            --secondary-bg: #1a1a1a;
+            --accent: #ffd700;
             --text-light: #ffffff;
             --text-muted: #b3b3b3;
         }
@@ -27,7 +27,7 @@
         header {
             background-color: var(--secondary-bg);
             padding: 20px 0;
-            text-align: centre;
+            text-align: center;
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -37,7 +37,7 @@
         header h1 {
             margin: 0;
             font-size: 2.5rem;
-            colour: var(--accent);
+            color: var(--accent);
             text-transform: uppercase;
             letter-spacing: 2px;
         }
@@ -45,34 +45,53 @@
         nav {
             margin: 10px auto;
             display: flex;
-            justify-content: centre;
+            justify-content: center;
             gap: 20px;
             font-size: 1.1rem;
         }
 
         nav a {
             text-decoration: none;
-            colour: var(--text-light);
+            color: var(--text-light);
             font-weight: 600;
+            transition: color 0.3s ease-in-out;
         }
 
         nav a:hover {
-            colour: var(--accent);
+            color: var(--accent);
+        }
+
+        .hero {
+            background: url('path/to/your/hero-image.jpg') no-repeat center center/cover;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--text-light);
+            padding: 0 20px;
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
         }
 
         section {
             padding: 40px 20px;
-            text-align: centre;
+            text-align: center;
             max-width: 800px;
             margin: 0 auto;
         }
 
-        section#about {
-            background: url('path/to/your/image.jpg') no-repeat center center/cover;
-            color: var(--text-light);
-            padding: 80px 20px;
+        section#about, section#gallery, section#contact {
+            background-color: var(--secondary-bg);
             border-radius: 10px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            margin-bottom: 40px;
         }
 
         section h2 {
@@ -80,44 +99,30 @@
             margin-bottom: 20px;
             text-transform: uppercase;
             letter-spacing: 1.5px;
-        }
-
-        section#gallery {
-            background-color: var(--secondary-bg);
-            border-radius: 10px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-        }
-
-        section#contact {
-            background-color: var(--secondary-bg);
-            border-radius: 10px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            color: var(--accent);
         }
 
         footer {
             background-color: var(--secondary-bg);
-            text-align: centre;
+            text-align: center;
             padding: 10px 0;
             font-size: 0.9rem;
-            colour: var(--text-muted);
+            color: var(--text-muted);
             border-top: 1px solid var(--text-muted);
         }
 
         footer a {
-            colour: var(--accent);
+            color: var(--accent);
             text-decoration: none;
+            transition: color 0.3s ease-in-out;
+        }
+
+        footer a:hover {
+            color: var(--text-light);
         }
 
         footer p {
             margin: 0;
-        }
-
-        a {
-            transition: color 0.3s ease-in-out;
-        }
-
-        a:hover {
-            color: var(--accent);
         }
     </style>
 </head>
@@ -130,6 +135,10 @@
             <a href="#contact">Contact</a>
         </nav>
     </header>
+
+    <div class="hero">
+        <h2>Celebrating Culture, Confidence, and Community</h2>
+    </div>
 
     <section id="about">
         <h2>About Us</h2>
