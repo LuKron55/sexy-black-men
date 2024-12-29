@@ -57,7 +57,8 @@
             text-decoration: none;
             color: var(--text-light);
             font-weight: 600;
-            transition: color 0.3s ease-in-out;
+            transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+            position: relative;
         }
 
         nav a:hover {
@@ -83,23 +84,35 @@
             text-transform: uppercase;
             letter-spacing: 2px;
             text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+            color: var(--accent);
         }
 
         .grid-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(2, 1fr);
             gap: 20px;
             padding: 40px 20px;
             max-width: 1200px;
             margin: 0 auto;
         }
 
-        section {
+        .grid-container section {
             padding: 40px 20px;
             text-align: center;
             background-color: var(--highlight);
             border-radius: 10px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+            border: 1px solid var(--accent);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .grid-container section:hover {
+            animation: wobble 0.5s infinite alternate;
+        }
+
+        @keyframes wobble {
+            0% { transform: rotate(-2deg); }
+            100% { transform: rotate(2deg); }
         }
 
         section h2 {
@@ -121,7 +134,7 @@
             padding: 10px 0;
             font-size: 0.9rem;
             color: var(--text-muted);
-            border-top: 1px solid var(--text-muted);
+            border-top: 1px solid var(--accent);
             box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.7);
         }
 
@@ -141,10 +154,11 @@
         }
 
         .mascot img {
-            max-width: 100%;
+            max-width: 50%;
             height: auto;
             border-radius: 10px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+            border: 1px solid var(--accent);
         }
     </style>
 </head>
@@ -188,5 +202,24 @@
     <footer>
         <p>&copy; 2024 Sexy Black Men. All rights reserved.</p>
     </footer>
+
+    <script>
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('mouseover', (e) => {
+                const linkRect = link.getBoundingClientRect();
+                const mouseX = e.clientX;
+                const mouseY = e.clientY;
+
+                const offsetX = (mouseX - linkRect.left) / linkRect.width - 0.5;
+                const offsetY = (mouseY - linkRect.top) / linkRect.height - 0.5;
+
+                link.style.transform = `translate(${offsetX * 20}px, ${offsetY * 20}px)`;
+            });
+
+            link.addEventListener('mouseout', () => {
+                link.style.transform = 'translate(0, 0)';
+            });
+        });
+    </script>
 </body>
 </html>
