@@ -66,6 +66,7 @@
             font-weight: 600;
             transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
             position: relative;
+            cursor: pointer;
         }
 
         nav a:hover {
@@ -123,6 +124,7 @@
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
             border: 1px solid var(--accent);
             transition: transform 0.3s ease-in-out;
+            cursor: pointer;
         }
 
         .grid-container section:hover {
@@ -132,6 +134,10 @@
         @keyframes wobble {
             0% { transform: rotate(-2deg); }
             100% { transform: rotate(2deg); }
+        }
+
+        #gallery {
+            cursor: pointer;
         }
 
         section h2 {
@@ -167,6 +173,7 @@
             color: var(--accent);
             text-decoration: none;
             transition: color 0.3s ease-in-out;
+            cursor: pointer;
         }
 
         footer a:hover {
@@ -208,7 +215,7 @@
             <p>A platform dedicated to celebrating the strength, beauty, and elegance of black men worldwide.</p>
         </section>
 
-        <section id="gallery">
+        <section id="gallery" onclick="location.href='https://sexyblack.men/gallery'">
             <h2>Gallery</h2>
             <p>Explore our curated collection of stunning black people.
         </section>
